@@ -18,8 +18,8 @@ app.get("/results", function(req, res){
     });
 });
 
-  app.set('port',process.env.OPENSHIFT_NODEJS_PORT);
-  app.set('ip',process.env.OPENSHIFT_NODEJS_IP);
+  app.set('port',8080);
+  app.set('ip',"0.0.0.0");
 
 
 // Set the app.listen to use the port and ip.
