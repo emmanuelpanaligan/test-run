@@ -19,7 +19,12 @@ app.get("/results", function(req, res){
 });
 
 
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-app.listen(3000, function(){
-    console.log("Movie App has started!!!");
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
+app.listen(server_port, server_ip_address, function () {
+
+    console.log( "Listening on " + server_ip_address + ", server_port " + server_port  );
+
 });
